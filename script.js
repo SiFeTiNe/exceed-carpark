@@ -1,4 +1,4 @@
-fetch("https://exceed8.cpsk-club.xyz/", {mode: "no-cors"})
+fetch("carpark.JSON")
 .then(response => response.json())
 .then((datas) => {
         datas.forEach((data) => {

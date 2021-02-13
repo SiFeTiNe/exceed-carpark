@@ -1,0 +1,47 @@
+{
+    "g8": [
+        {
+            "_id": "60275062f56e3c00070ec8c5",
+            "park_id": 1,
+            "status": 0,
+            "time_start": "15:34:42",
+            "time_end": "15:34:43",
+            "time_start_min": 935,
+            "time_end_min": 935,
+            "price": 0
+        },
+        
+        {
+            "_id": "602750d9f56e3c00070ec8c7",
+            "park_id": 2,
+            "status": 0,
+            "time_start": "15:34:43",
+            "time_end": "15:34:44",
+            "time_start_min": 935,
+            "time_end_min": 935,
+            "price": 400
+        },
+
+        {
+            "_id": "602750f9f56e3c00070ec8c8",
+            "park_id": 3,
+            "status": 0,
+            "time_start": "15:30:18",
+            "time_end": "15:30:22",
+            "time_start_min": 931,
+            "time_end_min": 931,
+            "price": 0
+        },
+
+        {
+            "_id": "60275115f56e3c00070ec8c9",
+            "park_id": 4,
+            "status": 1,
+            "time_start": "15:34:42",
+            "time_end": "15:34:8",
+            "time_start_min": 935,
+            "time_end_min": 935,
+            "price": 0
+        }
+    ]
+}
