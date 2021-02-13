@@ -30,7 +30,7 @@ def update_one():
             'time_start': time_str, 
             'time_start_min': time}}
     myCollection.update_one(filt, updated_content)
-    return {'result' : 'Updated successfully'}
+    return render_template("index.html")
 
 @app.route('/calculate', methods=['GET'])
 def calculate():
@@ -40,7 +40,7 @@ def calculate():
     start = query["time_start_min"]
     end = query["time_end_min"]
     price = (end - start) * 20
-    return{'result' : price}
+    return render_template("index.html", price = price)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='50002', debug=True)
