@@ -20,5 +20,4 @@ Team Members
 Prerequisites
 ---
 
-- [Node.js](https://nodejs.org/en/)  (ver. 12 or newer) 
 - [MongoDB](https://www.mongodb.com/1)
