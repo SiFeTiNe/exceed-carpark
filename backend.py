@@ -43,7 +43,12 @@ def calculate(ids):
     start = query["time_start_min"]
     end = query["time_end_min"]
     price = (end - start) * 20
+
+    updated_content = {"$set": {
+            'price': price}}
+    myCollection.update_one(filt, updated_content)
+
     return {'result' : price}
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port='50002', debug=True)
+    app.run(host='0.0.0.0', port='3000', debug=True)
