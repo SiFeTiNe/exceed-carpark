@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
@@ -6,6 +6,10 @@ app.config['MONGO_URI'] = 'mongodb://exceed_user:1q2w3e4r@158.108.182.0:2277/exc
 mongo = PyMongo(app)
 
 myCollection = mongo.db.g8
+
+# @app.route('/', methods=['GET'])
+# def index():
+#     return render_template("index.html")
 
 @app.route('/update', methods=['PUT'])
 def update_one():
@@ -30,17 +34,16 @@ def update_one():
             'time_start': time_str, 
             'time_start_min': time}}
     myCollection.update_one(filt, updated_content)
-    return render_template("index.html")
+    return data
 
-@app.route('/calculate', methods=['GET'])
-def calculate():
-    data = request.json
-    filt = {'park_id': data["park_id"]}
+@app.route('/calculate/<ids>', methods=['GET'])
+def calculate(ids):
+    filt = {'park_id': int(ids)}
     query = myCollection.find_one(filt)
     start = query["time_start_min"]
     end = query["time_end_min"]
     price = (end - start) * 20
-    return render_template("index.html", price = price)
+    return {'result' : price}
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='50002', debug=True)
